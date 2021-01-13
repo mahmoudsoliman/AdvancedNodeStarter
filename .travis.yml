@@ -3,8 +3,7 @@ node_js:
   - "14"
 dist: trusty
 env:
-  - NODE_ENV=ci
-  - PORT=3000
+  - NODE_ENV=ci PORT=3000
 services:
   - mongodb
   - redis-server
