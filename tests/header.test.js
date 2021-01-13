@@ -1,10 +1,11 @@
 const { Page } = require('./helpers/page')
+const config = require('./helpers/config')
 
 describe('header tests', async () => {
   let page
   beforeEach(async () => {
     page = await Page.build()
-    await page.goto('localhost:3000/')
+    await page.goto(config.httpPrefix + config.baseUrl)
   })
 
   afterEach(async () => {

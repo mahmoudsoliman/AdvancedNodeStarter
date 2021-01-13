@@ -5,5 +5,5 @@ module.exports = {
   mongoURI: 'mongodb://127.0.0.1:27017/blog_dev',
   cookieKey: '123123123',
   redisURI: 'redis://127.0.0.1:6379',
-  httpPrefix: ''
+  httpPrefix: 'http://'
 };

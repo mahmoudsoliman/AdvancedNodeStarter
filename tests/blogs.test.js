@@ -1,15 +1,16 @@
 const { Page } = require('./helpers/page')
 const { createUser } = require('./factories/user')
+const config = require('./helpers/config')
 
 let page
 
 describe('when user is logged in', async () => {
   beforeEach(async () => {
     page = await Page.build()
-    await page.goto('localhost:3000/')
+    await page.goto(config.httpPrefix + config.baseUrl)
     const user = await createUser()
     await page.login(user)
-    await page.goto('localhost:3000/blogs')
+    await page.goto(config.httpPrefix + config.baseUrl + '/blogs')
   })
 
   afterEach(async () => {

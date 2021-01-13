@@ -1,5 +1,5 @@
 const redis = require('redis')
-const { redisURI } = require('../config/dev')
+const { redisURI } = require('../config/keys')
 const util = require('util')
 
 const client = redis.createClient(redisURI)

@@ -1,10 +1,11 @@
 const puppeteer = require('puppeteer')
 const { createSession } = require('../factories/session')
+const config = require('./config')
 
 class CustomePage {
   static async build () {
     const browser = await puppeteer.launch({
-      headless: false
+      headless: true
     })
     const page = await browser.newPage()
     const customePage = new CustomePage(browser, page)
@@ -32,7 +33,7 @@ class CustomePage {
       value: sig
     })
 
-    await this.page.goto('localhost:3000')
+    await this.page.goto(config.httpPrefix + config.baseUrl)
   }
 }
 
